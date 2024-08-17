@@ -10,7 +10,7 @@ body {
 }
 header {
   color: #2d2f31;
-  padding: 1rem;
+  padding: 0.9rem;
   display: flex;
   gap: 1rem;
   justify-content: space-between;
@@ -66,13 +66,38 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
-@media(width<=1200px){
-    .tech-on-udemy-container{
-        display: none;
-    }
+.menu-icon-container,.search-icon-for-mobile {
+  display: none;
 }
-@media(width<=980px){
-    .plans-and-pricing{
-        display: none;
-    }
+
+@media (width<=1200px) {
+  .tech-on-udemy-container {
+    display: none;
+  }
+}
+@media (width<=980px) {
+  .plans-and-pricing {
+    display: none;
+  }
+}
+@media (width<=800px) {
+  .language-icon-container,
+  .singup-button-container,
+  .udemy-business,
+  .login-button-container,
+  .category-container,
+  .search-container {
+    display: none;
+  }
+  .cart-container{
+    display: flex;
+    gap: 1rem;
+
+  }
+  .menu-icon-container,.search-icon-for-mobile{
+    display: block;
+  }
+  header{
+    padding: 0.4rem;
+  }
 }
