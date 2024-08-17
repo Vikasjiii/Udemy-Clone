@@ -3,27 +3,37 @@
 }
 :root {
   --one-px-border: 1px solid black;
+  --primary-black-color: #2d2f31;
 }
 body {
   margin: 0;
+  padding: 0;
   font-family: "DM Sans", sans-serif;
-}
-header {
-  color: #2d2f31;
-  padding: 0.9rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  align-items: center;
-
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
-  background-color: #fefffe;
-  font-size: 14px;
-  font-weight: 500;
 }
 ul {
   margin: 0;
   padding: 0;
+}
+header {
+  color: var(--primary-black-color);
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+  background-color: #fefffe;
+  font-size: 14px;
+  font-weight: 500;
+  padding-inline: 1rem;
+}
+
+header > div {
+  padding-block: 1.5rem;
+  margin: 4px;
+}
+
+header > .logo-container {
+  padding-block: 14px;
 }
 .logo-container > img {
   width: 91px;
@@ -37,6 +47,7 @@ ul {
   overflow: hidden;
   flex-grow: 1;
   background-color: #f6f9fb;
+  height: 40px;
 }
 .search-container > input {
   padding: 0.8rem;
@@ -46,6 +57,56 @@ ul {
   background-color: transparent;
   font-family: inherit;
 }
+.udemy-business,
+.tech-on-udemy-container,
+.cart-container {
+  position: relative;
+  transition: all 0.25s ease-out;
+}
+.udemy-business > div,
+.tech-on-udemy-container > div,
+.cart-container > div {
+  font-weight: 700;
+  font-size: 16px;
+  position: absolute;
+  top: 75px;
+  right: 4px;
+  width: 280px;
+  text-align: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding-inline: 1rem;
+  display: none;
+}
+.cart-container > div {
+  font-size: 12px;
+  width: 200px;
+}
+.cart-container .keep-shoping {
+  color: #a435f0;
+}
+.udemy-business > div .hover-text,
+.tech-on-udemy-container > div .hover-text,
+.cart-container > div .hover-text {
+  padding-inline: 1.5rem;
+  color: black;
+}
+.udemy-business > div .btn,
+.tech-on-udemy-container > div .btn {
+  background-color: var(--primary-black-color);
+  color: white;
+  padding: 0.5rem 1rem;
+}
+.udemy-business:hover > div,
+.tech-on-udemy-container:hover > div,
+.cart-container:hover > div {
+  display: block;
+}
+.tech-on-udemy-container {
+  position: relative;
+}
+.cart-container {
+  padding-block: 18px;
+}
 .cart-container > img {
   vertical-align: middle;
 }
@@ -53,11 +114,10 @@ ul {
 .singup-button-container {
   border: var(--one-px-border);
   padding: 0.5rem;
-  /* font-size: 12px; */
 }
 .singup-button-container {
   color: white;
-  background-color: #2d2f31;
+  background-color: rgba(0, 0, 0, 0.85);
 }
 .language-icon-container {
   border: var(--one-px-border);
@@ -66,27 +126,55 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
+
+.categories-container:hover,
+.plans-and-pricing:hover,
+.udemy-business:hover,
+.tech-on-udemy-container:hover {
+  color: #a435f0;
+}
+.purple-cart {
+  display: none;
+}
+.cart-container:hover .cart-icon {
+  display: none;
+}
+.cart-container:hover .purple-cart {
+  display: block;
+}
+div.login-button-container:hover,
+div.language-icon-container:hover,
+div.search-container:hover {
+  background-color: #e3e7ea;
+}
+
+.singup-button-container:hover {
+  background-color: black;
+}
 .menu-icon-container,
 .search-icon-for-mobile {
   display: none;
 }
 
+div.show {
+  display: block;
+}
 @media (width<=1200px) {
   .tech-on-udemy-container {
     display: none;
   }
 }
-@media (width<=980px) {
+@media (width<=1050px) {
   .plans-and-pricing {
     display: none;
   }
 }
-@media (width<=800px) {
+@media (width<=900px) {
   .language-icon-container,
   .singup-button-container,
   .udemy-business,
   .login-button-container,
-  .category-container,
+  .categories-container,
   .search-container {
     display: none;
   }
@@ -98,7 +186,8 @@ ul {
   .search-icon-for-mobile {
     display: block;
   }
-  header {
+
+  header > div {
     padding-top: 1rem;
     padding-bottom: 0.2rem;
   }
