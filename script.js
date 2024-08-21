@@ -1,6 +1,10 @@
-// const udemyBusiness=document.querySelector('.udemy-business')
-
-// udemyBusiness.addEventListener('mouseover',()=>{
-//     udemyBusiness.chilfren[0].classList.add('show')
-
-// })
+const planDropDownArrows = document.querySelectorAll(
+  ".plan-dropdown-down-arrow-img-for-mobile"
+);
+const planHeader = document.querySelectorAll(".plan-header");
+planHeader.forEach((arrow) => {
+  arrow.addEventListener("click", () => {
+    arrow.nextElementSibling.classList.toggle("open-course-info");
+    arrow.classList.add('rotate-arrow')
+  });
+});
